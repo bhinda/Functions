@@ -1,0 +1,43 @@
+#get system date
+Sys.Date()
+
+# Current date and time
+date()
+
+# Convert object to a date object
+date1 <-"2015-01-12"
+class(date1)
+date2 <- as.Date(date1)
+class(date2)
+
+date3 <- "12-Jan-2014"
+date4 <- as.Date(date3,format="%d-%b-%Y")
+class(date4)
+date5 <- "12-11-2014"
+date6 <- as.Date(date5,format="%d-%m-%Y")
+date6
+class(date6)
+
+# strptime concert character into POXIt format representing calendar dates and times.
+
+dates <- c("02/27/92", "02/27/92", "01/14/92", "02/28/92", "02/01/92")
+times <- c("23:03:20", "22:29:56", "01:03:30", "18:21:03", "16:56:26")
+x <- paste(dates, times)
+strptime(x, "%m/%d/%y %H:%M:%S")
+
+# Convert character vectors into Dates vector
+dates.format <- as.Date(dates,format="%m/%d/%y")
+# month, year and week from a date
+dates.format.df <- data.frame(dates.format,
+                           month=months(dates.format),
+                           weekday=weekdays(dates.format),
+                           year=format(dates.format,"%Y"),
+                           month.num =format(dates.format,"%m"))
+
+# difftime Time intervals creation, printing, and some arithmetic.
+date1 <-as.Date("1978-01-09")
+current <- Sys.Date()
+
+age.month <-as.integer(difftime(current,
+                     date1,                     
+                     unit="days")/30)
