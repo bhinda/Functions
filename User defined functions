@@ -1,0 +1,14 @@
+
+pow <- function(base, pow){
+  a =pow*log(base)
+  exp(a)
+}
+
+pow(2,3.3)
+
+pow(5,5)
+
+?pow
+
+library(help="datasets")
+rm(pow)
