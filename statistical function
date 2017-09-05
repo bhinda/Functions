@@ -1,0 +1,71 @@
+a <- rnorm(1000,mean = 123,sd=20)
+# total
+sum(a)
+length(a)
+sum(a)/length(a)
+# Mean, and Median
+mean(a)
+
+median(a)
+
+fff <- c(23,32,56,76,84,65,65)
+fff <- sort(fff)
+median(fff)
+
+fff <- c(23,32,56,76,43,66,76,84,65,65)
+fff <- sort(fff)
+
+quantile(fff,0)
+quantile(fff,1)
+quantile(fff,0.5)
+
+quantile(a,1)
+
+quantile(a,0.75)
+
+quantile(fff,prob=c(0.1,0.2,0.3,0.4))
+
+# Max, Min and Range
+max(a)
+min(a)
+range(a)
+
+# Standard deviation
+sd(a)
+# variance
+var(a)
+
+sqrt(var(a))
+# Quantile
+hist(a, breaks=40, col = "blue",
+     border = "white")
+quantile(a,0.5)
+quantile(a,0.25)
+quantile(a,0.75)
+
+quantile(a,0) # Min
+quantile(a,1) # Max
+
+# skewness and kurtosis
+install.packages("moments")
+library(moments)
+skewness(a) # Skewness if negative then negatively skewed higher the value, higher is skewness
+kurtosis(a) # NOrmal distribution has value around 3 
+
+# ---- Distribution
+# normal
+norm <- rnorm(1000,50,20)
+
+hist(norm,
+     col="red")
+# Binomial
+bino <-rbinom(1000,5,0.85)
+hist(bino,
+     col="blue")
+table(bino)
+# Poisson
+pois <-rpois(1000,10)
+hist(pois,
+     col="orange")
+skewness(pois)
+kurtosis(pois)
