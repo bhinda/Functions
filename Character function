@@ -1,0 +1,83 @@
+a <- "look for repeated words or sentences, only take the top 50 of"
+class(a)
+# Count characters
+nchar(a)
+
+dt <- "12 Jan2012"
+len <- nchar(dt)
+yr <- substr(dt,len+1-4, len)
+
+# numeric
+x <- c(12,334,454,1)
+length(x)
+nchar(x)
+
+str <- "Piyush, Prakash"
+6+1+1+3
+nchar(str)
+
+str1 <- c("Piyush", "Prakash")
+nchar(str1)
+# Change case of the string
+a.cap <- toupper(a)
+a.low <- tolower(a.cap)
+# no proper case function
+
+
+
+# combine strings : paste()
+firstName <-"Ram"
+lastName <- "Prajapat"
+Name <- paste(firstName,lastName,sep="^^^^^^")
+Name
+
+paste0(firstName,lastName)
+
+folder="C:\\Ram\\R for Data Science\\data"
+file="binary.csv"
+filename <- paste(folder,
+                  file,
+                  sep="\\")
+dt <- read.csv(file=filename,header=T)
+
+View(dt)
+
+# split sting: strsplit
+
+st <- strsplit(a, split = " ")
+
+as.vector(st[[1]])
+length(st[[1]])
+
+st[[1]][3]
+
+st[1]
+
+
+#Scenario - count words
+
+post.details <- "28k views Aggregate (count) rows that match a condition"
+str1 <- strsplit(post.details," ")
+length(str1[[1]])
+
+# Counting characters in each element of a columns
+str1.df <- data.frame(vars =str1)
+names(str1.df) <-"words"
+str1.df$chars <- nchar(as.character(str1.df$words))
+
+class(str1.df$words)
+
+
+# sub string/part of an sting : substr
+# Scenario: find day from date string
+date <- "13January2015"
+day <- substr(date,1,2)
+day
+year <- substr(date,10,14)
+
+class(year)
+
+#Get std code from phone numbers
+phone_number <- c('03561-220885','06641-226813', '03192-244661')
+std_code <- substr(phone_number,1,5)
+
